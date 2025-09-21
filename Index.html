@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Mi Amor 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Música -->
+  <audio id="bg-music" loop hidden>
+    <source src="tu-cancion-romantica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Pantalla de inicio -->
+  <section class="screen" id="screen1">
+    <h1 class="title">Tengo algo especial para ti 💖</h1>
+    <button class="btn" onclick="nextScreen(2)">Ver sorpresa ✨</button>
+  </section>
+
+  <!-- Historia -->
+  <section class="screen" id="screen2" style="display:none;">
+    <h2 class="title">Nuestra Historia 📖</h2>
+    <p class="story">Desde que llegaste a mi vida, todo cambió. Los días son más brillantes, las noches más dulces y mi corazón más feliz. Eres mi inspiración y mi razón de sonreír cada día. 💕</p>
+    <button class="btn" onclick="nextScreen(3)">Seguir ➡️</button>
+  </section>
+
+  <!-- Cartas -->
+  <section class="screen" id="screen3" style="display:none;">
+    <h2 class="title">Cartas para ti 💌</h2>
+    <div class="letter" onclick="openLetter(this)">
+      <div class="letter-content">Eres lo más hermoso que me ha pasado en la vida. 💖</div>
+    </div>
+    <div class="letter" onclick="openLetter(this)">
+      <div class="letter-content">Prometo siempre estar a tu lado, en cada paso y en cada sueño. 🌹</div>
+    </div>
+    <div class="letter" onclick="openLetter(this)">
+      <div class="letter-content">Te amo más de lo que las palabras pueden expresar. ✨</div>
+    </div>
+    <button class="btn" onclick="nextScreen(4)">Final mágico 🌸</button>
+  </section>
+
+  <!-- Final -->
+  <section class="screen" id="screen4" style="display:none; background: #d63384;">
+    <h1 class="final">Siempre serás mi Amor 💖</h1>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

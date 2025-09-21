@@ -1,0 +1,147 @@
+ body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .screen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .btn {
+      background: #d63384;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      margin-top: 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn:hover {
+      background: #b52a6c;
+      transform: scale(1.1);
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #d63384;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .story {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .story.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .letter {
+      width: 200px;
+      height: 150px;
+      background: #fff;
+      margin: 20px auto;
+      position: relative;
+      border: 2px solid #d63384;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+    .letter:hover {
+      transform: scale(1.05);
+    }
+    .letter::before {
+      content: "💌";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+    }
+    .letter.opened::before {
+      display: none;
+    }
+    .letter-content {
+      display: none;
+      padding: 20px;
+      font-size: 1rem;
+      color: #333;
+    }
+    .letter.opened .letter-content {
+      display: block;
+    }
+
+    .final {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px #d63384, 0 0 20px #ff4d6d;
+      animation: glow 2s infinite alternate;
+      padding: 20px;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #d63384; }
+      to { text-shadow: 0 0 25px #ff4d6d, 0 0 50px #d63384; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pétalos cayendo */
+    .petal {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* 📱 Responsividad */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.8rem;
+      }
+      .story {
+        font-size: 1rem;
+        padding: 10px;
+      }
+      .letter {
+        width: 150px;
+        height: 120px;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      .final {
+        font-size: 1.5rem;
+      }
+    }
